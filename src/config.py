@@ -67,39 +67,33 @@ def build_parser() -> argparse.ArgumentParser:
         )
     )
     parser.add_argument(
-        "--package",
-        required=True,
+        "--package", required=True,
         type=non_empty,
         help="имя анализируемого пакета",
     )
     parser.add_argument(
-        "--repository",
-        required=True,
+        "--repository", required=True,
         type=valid_repository,
         help="URL репозитория или путь к тестовому файлу",
     )
     parser.add_argument(
         "--test-mode",
-        required=True,
-        choices=("true", "false"),
+        required=True, choices=("true", "false"),
         help="режим тестового репозитория: true или false",
     )
     parser.add_argument(
         "--version",
-        required=True,
-        type=valid_version,
+        required=True, type=valid_version,
         help="версия анализируемого пакета",
     )
     parser.add_argument(
         "--output",
-        required=True,
-        type=valid_output,
+        required=True, type=valid_output,
         help="имя выходного SVG-файла",
     )
     parser.add_argument(
         "--max-depth",
-        required=True,
-        type=positive_or_zero_int,
+        required=True, type=positive_or_zero_int,
         help="максимальная глубина анализа (целое число >= 0)",
     )
     return parser
